@@ -42,13 +42,13 @@ class GlobalAddressBatchGUI(GlobalAddressDesign.GlobalAddress_Design):
 
         #For Testing
         #AUTO MAPPING.  parameter input = index of combo box
-        self.cmbAdd1.current(5)
-        self.cmbAdd2.current(6)
-        self.cmbAdd3.current(7)
-        self.cmbLoc.current(8)
-        self.cmbAA.current(9)
-        self.cmbCN.current(10)
-        self.cmbPC.current(11)
+        #self.cmbAdd1.current(5)
+        #self.cmbAdd2.current(6)
+        #self.cmbAdd3.current(7)
+        #self.cmbLoc.current(8)
+        #self.cmbAA.current(9)
+        #self.cmbCN.current(10)
+        #self.cmbPC.current(11)
     #========================================#
     #OutputFileDialog
     #========================================#
@@ -87,6 +87,7 @@ class GlobalAddressBatchGUI(GlobalAddressDesign.GlobalAddress_Design):
         self.cmbSNA['values'] = header
         self.cmbCN['values'] = header
         self.cmbPC['values'] = header
+        self.cmbLN['values'] = header
 
 
     #========================================#
@@ -110,6 +111,9 @@ class GlobalAddressBatchGUI(GlobalAddressDesign.GlobalAddress_Design):
         if self.cmbOutputGeo.current() == 1:
             inputOptions.append("OutputGeo:Off")
         inputOptions.append("CountryOfOrigin:{0}".format(self.txtCountry.get()))
+        #USExtras
+        if self.cmbUSExtras.current() == 0:
+            inputOptions.append("USExtras:ON")
         #Convert to string
         finalOptions = ''
         for option in inputOptions:
@@ -140,6 +144,7 @@ class GlobalAddressBatchGUI(GlobalAddressDesign.GlobalAddress_Design):
         inputDict['SubNationalArea'] = self.cmbSNA.get()
         inputDict['PostalCode'] = self.cmbPC.get()
         inputDict['Country'] = self.cmbCN.get()
+        inputDict['LastName'] = self.cmbLN.get()
         delList = []
         #search for empty mappings and delete them from the dictionary
         for key, value in inputDict.items():
@@ -278,7 +283,7 @@ def main():
     root.columnconfigure(3,weight=1)
     root.style = ttk.Style()
     root.style.theme_use("alt")
-    root.geometry("750x600")
+    root.geometry("750x750")
     app = GlobalAddressBatchGUI()
     root.mainloop()
 

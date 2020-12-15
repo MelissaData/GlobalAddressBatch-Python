@@ -133,6 +133,12 @@ class GlobalAddress_Design(Frame):
 ##        self.txtCountry.bind('<Return>', self.show_output)
         self.txtCountry.pack()
         
+        lblUSExtras = Label(oFrame, text = "US Extras")
+        lblUSExtras.pack()
+        self.cmbUSExtras = ttk.Combobox(oFrame, values = ['On','Off'])
+        self.cmbUSExtras.pack()
+        self.cmbUSExtras.current(1)
+        
         oFrame.pack()
         
         #========================================#
@@ -224,6 +230,11 @@ class GlobalAddress_Design(Frame):
         lblPC.pack()
         self.cmbPC = ttk.Combobox(areaFrame,postcommand = self.populateComboBox)
         self.cmbPC.pack()
+        
+        lblLN = Label(areaFrame,text = "Last Name")
+        lblLN.pack()
+        self.cmbLN = ttk.Combobox(areaFrame,postcommand = self.populateComboBox)
+        self.cmbLN.pack()
         
         areaFrame.pack(expand=1,padx = 30)
         
