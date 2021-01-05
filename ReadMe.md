@@ -1,6 +1,6 @@
 ![alt text](https://www.melissa.com/_borders17/nav/2017/images/melissa-global-intelligence.png)
 
-# Global Address API JAVA REST Sample Code
+# Global Address API PYTHON Sample Code
 
 This is a sample code for Melissa's Global Address API. It is written in Python and accesses the API as a JSON Batch. 
 This sample is intended to show the functionality of the Global Address Web Service and how to call the service in Python. 
