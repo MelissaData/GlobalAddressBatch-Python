@@ -144,7 +144,7 @@ class GlobalAddressBatchGUI(GlobalAddressDesign.GlobalAddress_Design):
         inputDict['SubNationalArea'] = self.cmbSNA.get()
         inputDict['PostalCode'] = self.cmbPC.get()
         inputDict['Country'] = self.cmbCN.get()
-        inputDict['LastName'] = self.cmbLN.get()
+        inputDict['Last'] = self.cmbLN.get()
         delList = []
         #search for empty mappings and delete them from the dictionary
         for key, value in inputDict.items():
